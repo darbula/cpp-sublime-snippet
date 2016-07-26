@@ -1,0 +1,6 @@
+<snippet>
+  <description>Unsigned long long …</description>
+  <content><![CDATA[typedef unsigned long long ull;]]></content>
+  <tabTrigger>ull</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

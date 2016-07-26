@@ -1,0 +1,15 @@
+<snippet>
+  <description>Template …</description>
+  <content><![CDATA[#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+int main() {
+  $0
+  return 0;
+}]]></content>
+  <tabTrigger>tpl</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>
