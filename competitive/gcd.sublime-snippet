@@ -1,0 +1,12 @@
+<snippet>
+  <description>GCD</description>
+  <content><![CDATA[${1:int} gcd(${1:int} a, ${1:int} b) {
+  while(b) {
+    a %= b;
+    swap(a, b);
+  }
+  return a;
+}${0:/* gcd returning 0 if a or b are zero */}]]></content>
+  <tabTrigger>gcd</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

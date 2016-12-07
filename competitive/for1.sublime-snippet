@@ -1,0 +1,8 @@
+<snippet>
+  <description>For loop 1-based</description>
+  <content><![CDATA[for (int ${1:i} = 1; ${1:i} <= n; ++${1:i}) {
+  ${0:/* code */}
+}]]></content>
+  <tabTrigger>for1</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

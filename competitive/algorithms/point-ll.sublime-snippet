@@ -1,0 +1,34 @@
+<snippet>
+  <description>Point long long</description>
+  <content><![CDATA[struct Point {
+  Point (long long x, long long y) : x(x), y(y) {}
+  long long x, y;
+};
+
+Point operator-(Point const& a, Point const& b) {
+  return Point(a.x - b.x, a.y - b.y);
+}
+
+long long normsq(Point d) {
+  return d.x*d.x + d.y*d.y;
+}
+
+long long cross(Point a, Point b) {
+  return a.x * b.y - a.y * b.x;
+}
+
+bool ccw(Point p, Point q, Point r) {
+  return cross(q - p, r - p) > 0;
+}
+
+bool collinear(Point p, Point q, Point r) {
+  return fabs(cross(q - p, r - p)) == 0;
+}
+
+bool operator<(Point const& a, Point const& b) {
+  return a.x != b.x ? a.x < b.x : a.y < b.y;
+}
+]]></content>
+  <tabTrigger>point</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

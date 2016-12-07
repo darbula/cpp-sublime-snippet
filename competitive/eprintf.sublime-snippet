@@ -1,0 +1,11 @@
+<snippet>
+  <description>Error printing</description>
+  <content><![CDATA[#ifdef ONLINE_JUDGE
+#define eprintf(...)
+#else
+#define eprintf(...) fprintf(stderr, __VA_ARGS__);
+#endif
+]]></content>
+  <tabTrigger>eprintf</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>
