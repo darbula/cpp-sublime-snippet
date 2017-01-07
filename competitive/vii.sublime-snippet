@@ -1,6 +1,6 @@
 <snippet>
-  <description>vector int …</description>
-  <content><![CDATA[typedef vector<pair<int, int>> vii;]]></content>
+  <description>vector pair int …</description>
+  <content><![CDATA[vector<pair<int, int>> ${1:g};]]></content>
   <tabTrigger>vii</tabTrigger>
   <scope>source.c, source.objc, source.c++, source.objc++</scope>
 </snippet>

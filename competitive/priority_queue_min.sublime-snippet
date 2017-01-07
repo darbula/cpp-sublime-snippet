@@ -1,0 +1,7 @@
+<snippet>
+  <description>Priority queue min …</description>
+  <content><![CDATA[priority_queue<${1:pair<int, int>}, vector<$1>, greater<$1> > ${2:pq};  // min heap
+$0]]></content>
+  <tabTrigger>pqm</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

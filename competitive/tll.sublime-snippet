@@ -1,0 +1,7 @@
+<snippet>
+  <description>typedef long long …</description>
+  <content><![CDATA[typedef long long ll;
+$0]]></content>
+  <tabTrigger>tll</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+  <description>Startswith function …</description>
+  <content><![CDATA[bool startswith(string& a, string& b) {
+  return strncmp(a.c_str(), b.c_str(), b.size())==0;
+}
+$0]]></content>
+  <tabTrigger>startswith</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

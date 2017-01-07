@@ -1,7 +1,8 @@
 <snippet>
   <description>Remove sync …</description>
   <content><![CDATA[ios_base::sync_with_stdio(false);
-cin.tie(NULL);]]></content>
+cin.tie(NULL);
+$0]]></content>
   <tabTrigger>sync</tabTrigger>
   <scope>source.c, source.objc, source.c++, source.objc++</scope>
 </snippet>

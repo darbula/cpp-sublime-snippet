@@ -1,5 +1,5 @@
 <snippet>
-  <description>Remove sync …</description>
+  <description>Std</description>
   <content><![CDATA[using namespace std;]]></content>
   <tabTrigger>std</tabTrigger>
   <scope>source.c, source.objc, source.c++, source.objc++</scope>

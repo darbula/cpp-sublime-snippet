@@ -1,0 +1,7 @@
+<snippet>
+  <description>typedef vector int …</description>
+  <content><![CDATA[typedef vector<int> vi;
+$0]]></content>
+  <tabTrigger>tvi</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

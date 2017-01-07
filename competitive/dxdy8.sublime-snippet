@@ -1,0 +1,8 @@
+<snippet>
+  <description>Directions 8</description>
+  <content><![CDATA[int dx[8] = {1,  1,  0, -1, -1, -1, 0, 1};
+int dy[8] = {0, -1, -1, -1,  0,  1, 1, 1};
+$0]]></content>
+  <tabTrigger>dxdy8</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

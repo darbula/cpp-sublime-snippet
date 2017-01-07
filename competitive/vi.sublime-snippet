@@ -1,6 +1,6 @@
 <snippet>
   <description>vector int …</description>
-  <content><![CDATA[typedef vector<int> vi;]]></content>
+  <content><![CDATA[vector<int> ${1:v};]]></content>
   <tabTrigger>vi</tabTrigger>
   <scope>source.c, source.objc, source.c++, source.objc++</scope>
 </snippet>

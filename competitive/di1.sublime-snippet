@@ -1,0 +1,8 @@
+<snippet>
+  <description>Define and cin …</description>
+  <content><![CDATA[${1:int} ${2:n};
+cin >> $2;
+$0]]></content>
+  <tabTrigger>di1</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

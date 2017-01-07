@@ -1,0 +1,9 @@
+<snippet>
+  <description>Regex search example …</description>
+  <content><![CDATA[regex r("\\\\b"+${1:word}+"\\\\b");
+smatch m;
+if (regex_search(${2:sentence}, m, r)) continue;
+$0]]></content>
+  <tabTrigger>regex</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>
