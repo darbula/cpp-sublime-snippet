@@ -1,0 +1,9 @@
+<snippet>
+  <description>for auto</description>
+  <content><![CDATA[for (auto ${1:i} : ${2:items}) {
+  ${0:/* code */}
+}
+]]></content>
+  <tabTrigger>fora</tabTrigger>
+  <scope>source.c++</scope>
+</snippet>
