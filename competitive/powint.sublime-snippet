@@ -1,0 +1,13 @@
+<snippet>
+  <description>Pow</description>
+  <content><![CDATA[int powint(int a, int b) {
+  int ans = 1;
+  while(b--) {
+    ans *= a;
+  }
+  return ans;
+}
+$0]]></content>
+  <tabTrigger>powint</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

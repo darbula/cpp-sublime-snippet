@@ -1,0 +1,31 @@
+<snippet>
+  <description>Sieve primes, factorize number in squared sieve range</description>
+  <content><![CDATA[const int mxf = 1e6 + 1;
+vector<int> primes;
+int P[mxf];
+void sieve() {
+  for (int i = 2; i < mxf; ++i) {
+    if (!P[i]) {
+      primes.push_back(i);
+      for (int j = 1; i*j < mxf; ++j) {
+        P[j*i] = 1;
+      }
+    }
+  }
+}
+
+
+// factorize number k up to mxf^2 in O(mxf/log mxf) - number of primes below mxf is ~ mxf/log mxf
+sieve();
+vector<int> kprimes;
+for (auto p : primes) {
+  while(k%p==0) {
+    k /= p;
+    kprimes.push_back(p);
+  }
+}
+if (k!=1) kprimes.push_back(k);
+]]></content>
+  <tabTrigger>primes</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

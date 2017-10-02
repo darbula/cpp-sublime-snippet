@@ -1,0 +1,19 @@
+<snippet>
+  <description>Longest increasing subsequence</description>
+  <content><![CDATA[// dp[i] - vrijednost trenutno najmanjeg elementa koji rezultira nizom duljine i
+  int lis(vector<int> &p) {
+  int n = p.size();
+  int ret = 0, dp[n+1];
+  memset(dp, 0x3f, sizeof(dp));
+  dp[0] = -1e9;
+  for (int i = 0; i < n; ++i) {
+    int v = lower_bound(dp, dp+n+1, p[i].second) - dp;
+    ret = max(ret, v);
+    dp[v] = min(dp[v], p[i].second);
+  }
+  return ret;
+}
+]]></content>
+  <tabTrigger>lis</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+  <description>Divide max</description>
+  <content><![CDATA[// If we have n items and want to distribute them in k bins so that we have r bins with q items and n-r bins with q-1 items.
+int q = n/k + 1;
+int r = n%k;
+]]></content>
+  <tabTrigger>divmax</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

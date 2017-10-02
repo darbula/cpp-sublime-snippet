@@ -1,0 +1,22 @@
+<snippet>
+  <description>Test generator template …</description>
+  <content><![CDATA[#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+int random_int(int lo, int hi) {
+  assert(hi<RAND_MAX);
+  return (rand() % (hi - lo)) + lo;
+}
+
+int main() {
+  srand (time(NULL));
+  int N = 1000000;
+  freopen("in.txt", "w", stdout);
+}
+]]></content>
+  <tabTrigger>tplgen</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

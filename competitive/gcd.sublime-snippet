@@ -6,7 +6,7 @@
     swap(a, b);
   }
   return a;
-}${0:/* gcd returning 0 if a or b are zero */}]]></content>
+}${0:/* gcd returning b or a if a or b are zero, respecitvely */}]]></content>
   <tabTrigger>gcd</tabTrigger>
   <scope>source.c, source.objc, source.c++, source.objc++</scope>
 </snippet>

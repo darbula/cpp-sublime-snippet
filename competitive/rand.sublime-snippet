@@ -1,0 +1,17 @@
+<snippet>
+  <description>Random</description>
+  <content><![CDATA[// overcomes RAND_MAX
+inline int RAND(int n) {
+  return abs((rand() << 15) + rand()) % n;
+}
+
+// in main
+  srand(time(0));
+// or to solve possibly non random time based seed prone to hacking use getpid from unistd.h
+#include <unistd.h>
+  srand(time(0) * getpid());
+
+$0]]></content>
+  <tabTrigger>rand</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+  <description>Integer ceil</description>
+  <content><![CDATA[${1:int} intceil(${1:int} a, ${1:int} b) {
+  return a/b + (a%b>0);
+}$0]]></content>
+  <tabTrigger>intceil</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

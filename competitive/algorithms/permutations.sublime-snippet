@@ -1,0 +1,11 @@
+<snippet>
+  <description>Permutations</description>
+  <content><![CDATA[/* Uses 0 base indexed array a with n interesting elements */
+sort(a, a+n);
+do {
+  ${0:/* code */}
+} while (next_permutation(a, a+n));
+]]></content>
+  <tabTrigger>perm</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

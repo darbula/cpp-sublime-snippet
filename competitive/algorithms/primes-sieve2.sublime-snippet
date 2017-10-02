@@ -1,0 +1,24 @@
+<snippet>
+  <description>Sieve primes, factorize number in sieve range</description>
+  <content><![CDATA[const int mxf = 1e6 + 1;
+int sp[mxf]; // smallest primes
+void sieve() {
+  for (int i = 2; i < mxf; ++i) {
+    if (sp[i]) continue;
+    for (int j = 1; i*j < mxf; ++j) {
+      if (!sp[j*i]) sp[j*i] = i;
+    }
+  }
+}
+
+// factorize k in O(log k) for k < mxf
+sieve();
+vector<int> kprimes;
+while(k!=1) {
+  kprimes.push_back(sp[k]);
+  k /= sp[k];
+}
+]]></content>
+  <tabTrigger>primes2</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>
