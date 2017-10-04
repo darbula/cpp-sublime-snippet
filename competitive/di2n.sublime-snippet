@@ -1,0 +1,11 @@
+<snippet>
+  <description>Define and cin …</description>
+  <content><![CDATA[${1:int} ${2:n}, ${3:m}, ${4:a}[${5:MAXN}];
+cin >> $2 >> $3;
+for (int i = 0; i < $2; ++i) {
+  cin >> $4[i];
+}
+$0]]></content>
+  <tabTrigger>di2n</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>
