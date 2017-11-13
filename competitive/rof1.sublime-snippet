@@ -1,6 +1,6 @@
 <snippet>
 	<description>For Loop Backwards 1-based</description>
-	<content><![CDATA[for (${1:i} = ${2:n}; $1 > ${3:0}; --$1) {
+	<content><![CDATA[for (int ${1:i} = ${2:n}; $1 > ${3:0}; --$1) {
 	${0:/* code */}
 }
 ]]></content>

@@ -8,7 +8,7 @@ struct sparse_table {
   vector<vector<int>> table;
   int height;
 
-  int lg2(int k) {  // returns largest p for which 2^p <= k
+  int lg2(int k) {
     return sizeof(int)*8 - 1 - __builtin_clz(k);
   }
 
@@ -21,16 +21,26 @@ struct sparse_table {
     table.assign(height+1, vector<int>(v.size()));
     iota(table[0].begin(), table[0].end(), 0);
     for (int h = 0; h < height; ++h) {
-      for (int i = 0; i + (1<<h) < v.size(); ++i) {
+      for (int i = 0; i + (1<<h) < (int)v.size(); ++i) {
         table[h+1][i] = argmin(table[h][i], table[h][i + (1<<h)]);
       }
     }
   }
 
-  T rmq(int i, int j) { // => returns minimum of x[i, j)
+  T rmq(int i, int j) {
+    if (i==j) return v[i];
+    assert(i<j);
     int h = lg2(j-i);
     return v[argmin(table[h][i], table[h][j - (1<<h)])];
   }
+
+  T rmqi(int i, int j) {
+    if (i==j) return i;
+    assert(i<j);
+    int h = lg2(j-i);
+    return argmin(table[h][i], table[h][j - (1<<h)]);
+  }
+
 };
 // sparse_table<int> st(v);
 ]]></content>

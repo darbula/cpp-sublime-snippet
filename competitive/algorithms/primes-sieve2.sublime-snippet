@@ -1,7 +1,7 @@
 <snippet>
   <description>Sieve primes, factorize number in sieve range</description>
   <content><![CDATA[const int mxf = 1e6 + 1;
-int sp[mxf]; // smallest primes
+int sp[mxf]; // smallest primes sieve in O(mxf)
 void sieve() {
   for (int i = 2; i < mxf; ++i) {
     if (sp[i]) continue;

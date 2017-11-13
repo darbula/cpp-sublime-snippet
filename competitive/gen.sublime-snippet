@@ -5,9 +5,14 @@
 using namespace std;
 
 
+typedef long long ll;
 
 int random_int(int lo, int hi) { // returns random integer in range [lo, hi)
-  return (abs((rand() << 15) + rand()) % (hi - lo)) + lo;
+  return (abs((rand() << 16) + rand()) % (hi - lo)) + lo;
+}
+
+ll random_ll(ll lo, ll hi) { // returns random ll in range [lo, hi)
+  return (abs(((ll)rand() << 48) + ((ll)rand() << 32) + ((ll)rand() << 16) + (ll)rand()) % (hi - lo)) + lo;
 }
 
 void create() {
