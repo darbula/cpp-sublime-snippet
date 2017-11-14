@@ -27,8 +27,7 @@ struct sparse_table {
     }
   }
 
-  T rmqi(int i, int j) {
-    if (i==j) return i;
+  T rmqi(int i, int j) {  // index of minimum in range [i, j)
     assert(i<j);
     int h = lg2(j-i);
     return argmin(table[h][i], table[h][j - (1<<h)]);
