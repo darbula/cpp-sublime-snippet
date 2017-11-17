@@ -1,0 +1,29 @@
+<snippet>
+  <description>LCA using sparse table</description>
+  <content><![CDATA[// include sparse table
+vector<int> g[MAXN], tour;
+int ind[MAXN], depth[MAXN];
+
+void dfs(int u, int p, int d) {
+  depth[u] = d;
+  for (auto v : g[u]) {
+    if (v==p) continue;
+    tour.push_back(depth[u]);
+    dfs(v, u, d+1);
+  }
+  ind[u] = tour.size();
+  tour.push_back(depth[u]);
+}
+
+  dfs(1, -1, 1);
+  
+  // make sparse table out of depths of tour nodes
+  sparse_table<int> st(tour);
+
+  // returns depth of the lca node for u and v
+  st.rmq(min(ind[u], ind[v]), max(ind[u], ind[v])+1);
+
+]]></content>
+  <tabTrigger>lca-sparse</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>
