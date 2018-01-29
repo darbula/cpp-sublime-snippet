@@ -1,0 +1,24 @@
+<snippet>
+  <description>Convex hull 2d</description>
+  <content><![CDATA[vector<Point> convex_hull(vector<Point> pts) {
+  sort(pts.begin(), pts.end());
+  vector<Point> ch;
+
+  for (int i = 0; i < 2; ++i) {
+    auto start = ch.size();
+    for (Point P : pts) {
+      while (ch.size() >= start+2 && ccw(ch[ch.size()-2], ch[ch.size()-1], P) <= 0) {
+        ch.pop_back();
+      }
+      ch.push_back(P);
+    }
+    ch.pop_back();
+    reverse(pts.begin(), pts.end());
+  }
+  return ch;
+}
+// O(n log n) ccw starting from min(x, y)
+]]></content>
+  <tabTrigger>convex-hull</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>
