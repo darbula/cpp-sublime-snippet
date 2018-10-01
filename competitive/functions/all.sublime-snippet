@@ -1,0 +1,7 @@
+<snippet>
+  <description>Unique</description>
+  <content><![CDATA[sort(${1:v}.begin(), ${1:v}.end());
+${1:v}.resize(unique(${1:v}.begin(), ${1:v}.end()) - ${1:v}.begin());$0]]></content>
+  <tabTrigger>unique</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

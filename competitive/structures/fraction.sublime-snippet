@@ -1,0 +1,36 @@
+<snippet>
+  <description>Fraction structure</description>
+  <content><![CDATA[struct frac {
+  ll a, b;
+  frac (ll _a = 0, ll _b = 1) {
+    if (_b < 0) {
+      _b *= -1;
+      _a *= -1;
+    }
+    ll g = gcd(abs(_a), _b);
+    a = _a/g, b = _b/g;
+  }
+
+  friend frac operator + (const frac &a, const frac &b) {
+    return frac(ll(a.a)*b.b + ll(a.b)*b.a, ll(a.b)*b.b);
+  }
+  friend frac operator * (const frac &a, const frac &b) {
+    return frac(ll(a.a)*b.a, ll(a.b)*b.b);
+  }
+  friend frac operator / (const frac &a, const frac &b) {
+    return frac(ll(a.a)*b.b, ll(a.b)*b.a);
+  }
+  friend frac operator - (const frac &a, const frac &b) {
+    return frac(ll(a.a)*b.b - ll(a.b)*b.a, ll(a.b)*b.b);
+  }
+  friend bool operator < (const frac &a, const frac &b) {
+    return ll(a.a)*b.b < ll(b.a)*a.b;
+  }
+  friend bool operator == (const frac &a, const frac &b) {
+    return ll(a.a)*b.b == ll(b.a)*a.b;
+  }
+};
+$0]]></content>
+  <tabTrigger>frac</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

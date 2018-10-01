@@ -1,0 +1,43 @@
+<snippet>
+  <description>Trie</description>
+  <content><![CDATA[class Node {
+  public:
+    Node *children;
+    const int size = 26;
+    bool end;
+
+    Node () {
+      children = NULL;
+      end = false;
+    }
+    ~Node() {
+      if (children != NULL) {
+        for (int i = 0; i < size; ++i) delete (children+i);
+        free(children);
+      }
+    }
+
+    void grow(const char *c) {
+      if (*c == '\0') {
+        end = true;
+        return;
+      }
+      if (children == NULL) children = new Node[size];
+      children[*c - 'a'].grow(c+1);
+    }
+
+    bool is_end() {
+      return children == NULL || end;
+    }
+};
+
+/*
+Node trie = Node();
+string s;
+cin >> s;
+trie.grow(s.c_str());
+*/
+$0]]></content>
+  <tabTrigger>trie</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

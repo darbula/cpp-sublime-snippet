@@ -1,0 +1,43 @@
+<snippet>
+  <description>Interactive template</description>
+  <content><![CDATA[#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+#ifdef ONLINE_JUDGE
+// use printf and scanf to get answer
+int ask(int &idx) {
+  printf("? %d\n", idx);
+  fflush(stdout);
+  int ans;
+  scanf("%d", &ans);
+  return ans;
+}
+#else
+// use local data loaded from input to get answer
+vector<int> vlocal;
+int ask(int &idx) {
+  printf("? %d\n", idx);
+  int ans = vlocal[idx];
+  return ans;
+}
+#endif
+
+int main() {
+  scanf("%d", &n);
+#ifndef ONLINE_JUDGE
+  // load input file, to be used in local ask function
+  for (int i = 0; i < n; ++i) {
+    int tmp;
+    scanf("%d", &tmp);
+    vlocal.push_back(tmp);
+  }
+#endif
+  return ask(3);
+}
+$0]]></content>
+  <tabTrigger>interactive</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

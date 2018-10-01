@@ -1,0 +1,42 @@
+<snippet>
+  <description>Testlib checker</description>
+  <content><![CDATA[#include "testlib.h"
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int readAns(InStream& stream) {
+  // This function reads a single integer from the participant output that
+  // should be between -2000 and 2000. If it doesn't belong to the specified
+  // range, checker finishes with verdict _pe and comment saying that [sum of numbers]
+  // is outside of the specified range.
+  int pans = stream.readInt(-2000, 2000, "sum of numbers");
+  int v = stream.readInt(1, n, format("path[%d]", i + 1).c_str());
+  // stream.quitf works as quitf but it modifies the verdict according
+  // to what stream it is being invoked from. If stream == ouf then
+  // it works exactly like quitf, otherwise if stream == ans then
+  // any verdict will work like _fail (because it's bad when jury's answer is incorrect)
+  stream.quitf(_wa, "vertex %d was used twice", v);
+  stream.quitf(_wa, "path doesn't start in s: expected s = %d, found %d", s, path.front());
+  return value;
+}
+
+int main(int argc, char* argv[]) {
+  registerTestlibCmd(argc, argv);
+  // Now there are three global variables specifying testlib streams:
+  // inf - stream with the testdata.
+  // ouf - stream with the contestant output.
+  // ans - stream with the jury answer.
+  n = inf.readInt(); // no need to additionally call readSpace() or readEoln() since
+  m = inf.readInt(); // there is no need to validate input file in the checker
+  int jans = readAns(ans);
+  int pans = readAns(ouf);
+  if (jans > pans)
+    quitf(_wa, "jury has the better answer: jans = %d, pans = %d\n", jans, pans);
+  else if (jans == pans) quitf(_ok, "answer = %d\n", pans);
+  else quitf(_fail, ":( participant has the better answer: jans = %d, pans = %d\n", jans, pans);
+}
+$0]]></content>
+  <tabTrigger>checker</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

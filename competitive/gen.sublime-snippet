@@ -1,5 +1,5 @@
 <snippet>
-  <description>Generator</description>
+  <description>Custom test generator</description>
   <content><![CDATA[#include <bits/stdc++.h>
 
 using namespace std;
