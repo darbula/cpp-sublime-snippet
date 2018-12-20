@@ -9,12 +9,16 @@ Point operator-(Point const& a, Point const& b) {
   return Point(a.x - b.x, a.y - b.y);
 }
 
-long long normsq(Point d) {
-  return d.x*d.x + d.y*d.y;
+long long normsq(Point v) {
+  return v.x*v.x + v.y*v.y;
 }
 
-long long cross(Point a, Point b) {
-  return a.x * b.y - a.y * b.x;
+long long dot(Point v, Point w) {
+  return v.x * w.x + v.y * w.y;
+}
+
+long long cross(Point v, Point w) {
+  return v.x * w.y - v.y * w.x;
 }
 
 bool ccw(Point p, Point q, Point r) {
@@ -22,11 +26,15 @@ bool ccw(Point p, Point q, Point r) {
 }
 
 bool collinear(Point p, Point q, Point r) {
-  return fabs(cross(q - p, r - p)) == 0;
+  return cross(q - p, r - p) == 0;
 }
 
 bool operator<(Point const& a, Point const& b) {
   return a.x != b.x ? a.x < b.x : a.y < b.y;
+}
+
+ostream& operator<<(ostream& os, Point p) {
+  return os << "("<< p.x << "," << p.y << ")";
 }
 ]]></content>
   <tabTrigger>point</tabTrigger>
