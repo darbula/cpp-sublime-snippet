@@ -1,0 +1,30 @@
+<snippet>
+  <description>Disjoint set union</description>
+  <content><![CDATA[struct dsu {
+  vector<int> p;
+  int n;
+
+  dsu(int N) : n(N) {
+    p.resize(n);
+    iota(p.begin(), p.end(), 0);
+  }
+
+  inline int find(int x) {
+    return (x == p[x] ? x : (p[x] = find(p[x])));
+  }
+
+  inline bool unite(int x, int y) {
+    x = find(x);
+    y = find(y);
+    if (x != y) {
+      if (rand()&1) swap(x, y);
+      p[x] = y;
+      return true;
+    }
+    return false;
+  }
+};
+$0]]></content>
+  <tabTrigger>dsu</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>

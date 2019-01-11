@@ -5,11 +5,10 @@ vector<int> primes;
 int P[mxf];
 void sieve() {
   for (int i = 2; i < mxf; ++i) {
-    if (!P[i]) {
-      primes.push_back(i);
-      for (int j = 1; i*j < mxf; ++j) {
-        P[j*i] = 1;
-      }
+    if (P[i]) continue;
+    primes.push_back(i);
+    for (int j = 2*i; j < mxf; j+=i) {
+      P[j] = 1;
     }
   }
 }

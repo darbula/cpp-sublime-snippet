@@ -1,0 +1,20 @@
+<snippet>
+  <description>n choose k</description>
+  <content><![CDATA[int C[MAXN][MAXK];  // MAXN and MAXK must be bigger than largest n and k needed
+int nCk(int n, int k) {
+  if (C[n][k]) return C[n][k];  // memoize
+  for (int i = 0; i < MAXN; i++) {
+    for (int j = 0; j < MAXK && j <= i; ++j) {
+      if (j==0 || j==i) {
+        C[i][j] = 1;
+      } else {
+        C[i][j] = (C[i-1][j-1] + C[i-1][j]) % MOD;
+      }
+    }
+  }
+  return C[n][k];
+}
+]]></content>
+  <tabTrigger>nck</tabTrigger>
+  <scope>source.c, source.objc, source.c++, source.objc++</scope>
+</snippet>
